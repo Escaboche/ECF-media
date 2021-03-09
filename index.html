@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Font familly PlayBall-->
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <!--CSS tentative d'utiliser Bulma-->
+    <link rel="stylesheet" href="bulma/css/bulma-rtl.min.css">
+    <!--CSS intro.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/3.3.1/introjs.css">
+    <!--CSS maison-->
+    <link rel="stylesheet" href="app.css">
+    <title>Médiatèque</title>
+</head>
+
+<body>
+    <!--Condition pour valider l'ajout d'un film-->
+    <a href='http://example.com/' data-intro='Hello step one!'></a>
+    <div id="infobulle">
+        <p>Les données saisie ne sont pas valides !</p>
+        <ul>
+            <li id="errTitre">Titre : Doit comporter minimum 2 caractères.</li>
+            <li id="errAnnee">Année : Doit comporter un format 4 chiffres compris entre 1900 et postérieur.</li>
+            <li id="errAuteur">Auteur : Doit comporter minimum 5 caractères.</li>
+        </ul>
+    </div>
+
+    <header>
+        <!--Pop-up de reussite-->
+        <article id="sucess">Film ajouté avec succès</article>
+        <!--barre de navigation-->
+        <nav class="header-nav">
+            <a href=""> Accueil</a>
+            <a href=""> Series</a>
+            <a href="">Films</a>
+            <a href="">Séance</a>
+        </nav>
+
+        <div data-title=" Hey ! Salut ! " data-intro=" Bienvenue dans la Médiatèque ! " class=" card-demo ">
+            <h1>Liste des films</h1>
+        </div>
+        <!--bouton validation du formulaire-->
+        <div class=" card__image " data-intro=" Par ici, c'est pour ajouter des films mais pas n'importe quels films !">
+            <button id="ajouter">Ajouter</button>
+        </div>
+        <!-- Formulaire "ajouter un film"-->
+        <div id="newContent">
+            <input class="adding" id="titre" type="text" placeholder="Entrer un titre">
+            <input class="adding" id="annee" type="number" maxlength="4" placeholder="Entrer une année">
+            <input class="adding" id="auteur" type="text" placeholder="Entrer un auteur">
+            <button class="adding" id="saver">Save</button>
+        </div>
+    </header>
+
+
+
+    <section>
+        <p>Filtrer par:</p>
+        <!--boutons filtres-->
+        <div class=" card__image " data-intro=" Ici , trier les films que nous proposons . ">
+            <button id="filtreAnnee" value="annee">Année</button>
+            <button id="filtreTitre" value="titre">Titre</button>
+        </div>
+        
+    </section>
+    <!--pop-up de Controle pour la supression d'une ligne-->
+    <div id="controleSupp">
+        <p class="para">Voulez vous vraiment effacer cette ligne ?</p>
+        <button id="btnYes">Oui ! aucun doute !</button>
+        <button id="btnNo">Non !</button>
+    </div>
+
+
+    <article>
+        <!--Tableau des films-->
+        <div class=" card__body " data-title=" Bye! "
+            data-intro=" Un film de Bruce Lee montre Chuck Norris se faire battre par Bruce Lee. C'est là l'effet spécial le plus cher de toute l'histoire du cinéma.  ">
+            <table>
+                <thead>
+                    <th class="title">Titre</th>
+                    <th class="annee">Année</th>
+                    <th class="real">Réalisateur</th>
+                    <th class="colonne_supprimer"></th>
+                </thead>
+                <tbody id="tableau">
+                </tbody>
+            </table>
+        </div>
+    </article>
+    <!--JS de Intro.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/3.3.1/intro.js"></script>
+    <!--JS-->
+    <script src="app.js"></script>
+</body>
+
+</html>
